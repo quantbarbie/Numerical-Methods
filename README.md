@@ -165,14 +165,30 @@ Greeks measure the sensitivity of derivative prices to changes in underlying par
 
 The Greeks are approximated using the following formulas:
 
-  \begin{align}
-    & \Delta = \frac{\partial V}{\partial S} \approx \frac{V(S + \Delta S) - V(S-\Delta S)}{2 \Delta S}, ~~~\Delta S = 0.1\% S \\
-    & \Gamma = \frac{\partial V^2}{\partial S^2} \approx \frac{V(S + \Delta S) - 2V(S) + V(S-\Delta S)}{\Delta S^2} \\
-    & v = \frac{\partial V}{\partial \sigma} \approx \frac{V(S, \sigma +\Delta \sigma) - V(S, \sigma -\Delta \sigma)}{2 \Delta \sigma } ~~~~~~~\Delta \sigma = 0.1\% \\
-    & \theta = \frac{\partial V}{\partial t} \approx \frac{V(S, t+\Delta t, T) - V(S, t, T)}{\Delta t} ~~~~\Delta t = 0.004 \\
-    & \rho = \frac{\partial V}{\partial r} \approx \frac{V(S, r+\Delta r) - V(S, r - \Delta r)}{2 \Delta r}  ~~~~~\Delta r = 0.0001
-  \end{align}
+1. **Delta (\(\Delta\))**:
+   \[
+   \Delta \approx \frac{V(S + \Delta S) - V(S - \Delta S)}{2 \Delta S}, \quad \Delta S = 0.1\% \times S
+   \]
 
+2. **Gamma (\(\Gamma\))**:
+   \[
+   \Gamma \approx \frac{V(S + \Delta S) - 2V(S) + V(S - \Delta S)}{\Delta S^2}
+   \]
+
+3. **Vega (\(v\))**:
+   \[
+   v \approx \frac{V(\sigma + \Delta \sigma) - V(\sigma - \Delta \sigma)}{2 \Delta \sigma}, \quad \Delta \sigma = 0.1\%
+   \]
+
+4. **Theta (\(\theta\))**:
+   \[
+   \theta \approx \frac{V(t + \Delta t) - V(t)}{\Delta t}, \quad \Delta t = 0.004
+   \]
+
+5. **Rho (\(\rho\))**:
+   \[
+   \rho \approx \frac{V(r + \Delta r) - V(r - \Delta r)}{2 \Delta r}, \quad \Delta r = 0.0001
+   \]
 
 ### Supported Models
 
