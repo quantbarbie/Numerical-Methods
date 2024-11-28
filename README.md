@@ -118,8 +118,8 @@ A function to convert `fixed<w, b>` representation to a real number using two's 
 The **Cox-Ross-Rubinstein (CRR)** binomial tree model is a discrete-time approach for option pricing. It evaluates the possible paths of an option's price iteratively.
 
 ### Function Signature
-```python
-def eurocall_crr(S, K, r, T, sigma, n): `
+
+def eurocall_crr(S, K, r, T, sigma, n): 
 
 ### Parameters
 
