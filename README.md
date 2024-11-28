@@ -1,4 +1,4 @@
-# **Arbitrage-Free Smile Interpolator**
+# **1. Arbitrage-Free Smile Interpolator**
 
 ## **Project Overview**
 This project involves implementing an arbitrage-free smile interpolator to enhance pricing accuracy and eliminate arbitrage opportunities.
