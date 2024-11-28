@@ -165,21 +165,13 @@ Greeks measure the sensitivity of derivative prices to changes in underlying par
 
 The Greeks are approximated using the following formulas:
 
-1.  **Delta (Δ\DeltaΔ)**:
-
-    Δ≈V(S+ΔS)-V(S-ΔS)2ΔS,ΔS=0.1%×S\Delta \approx \frac{V(S + \Delta S) - V(S - \Delta S)}{2 \Delta S}, \quad \Delta S = 0.1\% \times SΔ≈2ΔSV(S+ΔS)-V(S-ΔS)​,ΔS=0.1%×S
-2.  **Gamma (Γ\GammaΓ)**:
-
-    Γ≈V(S+ΔS)-2V(S)+V(S-ΔS)ΔS2\Gamma \approx \frac{V(S + \Delta S) - 2V(S) + V(S - \Delta S)}{\Delta S^2}Γ≈ΔS2V(S+ΔS)-2V(S)+V(S-ΔS)​
-3.  **Vega (vvv)**:
-
-    v≈V(σ+Δσ)-V(σ-Δσ)2Δσ,Δσ=0.1%v \approx \frac{V(\sigma + \Delta \sigma) - V(\sigma - \Delta \sigma)}{2 \Delta \sigma}, \quad \Delta \sigma = 0.1\%v≈2ΔσV(σ+Δσ)-V(σ-Δσ)​,Δσ=0.1%
-4.  **Theta (θ\thetaθ)**:
-
-    θ≈V(t+Δt)-V(t)Δt,Δt=0.004\theta \approx \frac{V(t + \Delta t) - V(t)}{\Delta t}, \quad \Delta t = 0.004θ≈ΔtV(t+Δt)-V(t)​,Δt=0.004
-5.  **Rho (ρ\rhoρ)**:
-
-    ρ≈V(r+Δr)-V(r-Δr)2Δr,Δr=0.0001\rho \approx \frac{V(r + \Delta r) - V(r - \Delta r)}{2 \Delta r}, \quad \Delta r = 0.0001ρ≈2ΔrV(r+Δr)-V(r-Δr)​,Δr=0.0001
+  \begin{align}
+    & \Delta = \frac{\partial V}{\partial S} \approx \frac{V(S + \Delta S) - V(S-\Delta S)}{2 \Delta S}, ~~~\Delta S = 0.1\% S \\
+    & \Gamma = \frac{\partial V^2}{\partial S^2} \approx \frac{V(S + \Delta S) - 2V(S) + V(S-\Delta S)}{\Delta S^2} \\
+    & v = \frac{\partial V}{\partial \sigma} \approx \frac{V(S, \sigma +\Delta \sigma) - V(S, \sigma -\Delta \sigma)}{2 \Delta \sigma } ~~~~~~~\Delta \sigma = 0.1\% \\
+    & \theta = \frac{\partial V}{\partial t} \approx \frac{V(S, t+\Delta t, T) - V(S, t, T)}{\Delta t} ~~~~\Delta t = 0.004 \\
+    & \rho = \frac{\partial V}{\partial r} \approx \frac{V(S, r+\Delta r) - V(S, r - \Delta r)}{2 \Delta r}  ~~~~~\Delta r = 0.0001
+  \end{align}
 
 
 ### Supported Models
