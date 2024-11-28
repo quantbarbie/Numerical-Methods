@@ -107,3 +107,84 @@ The `SmileAF` class ensures an arbitrage-free volatility surface by:
 ## **References**
 - [Fengler, 2009] *Arbitrage-Free Smoothing of the Implied Volatility Surface*, Quantitative Finance.
 
+## **2. Homework 1, Option pricing**
+
+### **Function Description**
+A function to convert `fixed<w, b>` representation to a real number using two's complement representation for negative numbers.
+`# CRR Binomial Tree Model and Greeks Calculation
+
+## 2. CRR Binomial Tree Model
+
+The **Cox-Ross-Rubinstein (CRR)** binomial tree model is a discrete-time approach for option pricing. It evaluates the possible paths of an option's price iteratively.
+
+### Function Signature
+```python
+def eurocall_crr(S, K, r, T, sigma, n): `
+
+### Parameters
+
+-   **S**: Initial stock price.
+-   **K**: Strike price.
+-   **r**: Risk-free interest rate.
+-   **T**: Time to maturity (in years).
+-   **sigma**: Volatility of the stock.
+-   **n**: Number of time steps in the binomial tree.
+
+* * * * *
+
+3\. Binomial Tree Models
+------------------------
+
+### Implemented Models
+
+-   **CRR** (Cox-Ross-Rubinstein)
+-   **JRRN** (Jarrow-Rudd Natural Measure)
+-   **JREQ** (Jarrow-Rudd Equal Measure)
+-   **Tian Calibration**
+
+### Functionality
+
+The binomial tree models are used to calculate the prices of financial derivatives (European call and put options). Each model uses its unique calibration for the upward and downward movement factors.
+
+* * * * *
+
+4\. Greeks Calculator
+---------------------
+
+### Overview
+
+Greeks measure the sensitivity of derivative prices to changes in underlying parameters. The following Greeks are calculated:
+
+-   **Delta (Δ\DeltaΔ)**: Sensitivity to underlying price changes.
+-   **Gamma (Γ\GammaΓ)**: Rate of change of Delta.
+-   **Vega (vvv)**: Sensitivity to volatility changes.
+-   **Theta (θ\thetaθ)**: Sensitivity to time decay.
+-   **Rho (ρ\rhoρ)**: Sensitivity to interest rate changes.
+
+### Finite Difference Approximations
+
+The Greeks are approximated using the following formulas:
+
+1.  **Delta (Δ\DeltaΔ)**:
+
+    Δ≈V(S+ΔS)-V(S-ΔS)2ΔS,ΔS=0.1%×S\Delta \approx \frac{V(S + \Delta S) - V(S - \Delta S)}{2 \Delta S}, \quad \Delta S = 0.1\% \times SΔ≈2ΔSV(S+ΔS)-V(S-ΔS)​,ΔS=0.1%×S
+2.  **Gamma (Γ\GammaΓ)**:
+
+    Γ≈V(S+ΔS)-2V(S)+V(S-ΔS)ΔS2\Gamma \approx \frac{V(S + \Delta S) - 2V(S) + V(S - \Delta S)}{\Delta S^2}Γ≈ΔS2V(S+ΔS)-2V(S)+V(S-ΔS)​
+3.  **Vega (vvv)**:
+
+    v≈V(σ+Δσ)-V(σ-Δσ)2Δσ,Δσ=0.1%v \approx \frac{V(\sigma + \Delta \sigma) - V(\sigma - \Delta \sigma)}{2 \Delta \sigma}, \quad \Delta \sigma = 0.1\%v≈2ΔσV(σ+Δσ)-V(σ-Δσ)​,Δσ=0.1%
+4.  **Theta (θ\thetaθ)**:
+
+    θ≈V(t+Δt)-V(t)Δt,Δt=0.004\theta \approx \frac{V(t + \Delta t) - V(t)}{\Delta t}, \quad \Delta t = 0.004θ≈ΔtV(t+Δt)-V(t)​,Δt=0.004
+5.  **Rho (ρ\rhoρ)**:
+
+    ρ≈V(r+Δr)-V(r-Δr)2Δr,Δr=0.0001\rho \approx \frac{V(r + \Delta r) - V(r - \Delta r)}{2 \Delta r}, \quad \Delta r = 0.0001ρ≈2ΔrV(r+Δr)-V(r-Δr)​,Δr=0.0001
+
+
+### Supported Models
+
+-   **greeks_crr**: Greeks calculation for CRR model.
+-   **greeks_jrrn**: Greeks calculation for JRRN model.
+-   **greeks_jreq**: Greeks calculation for JREQ model.
+-   **greeks_tian**: Greeks calculation for Tian model.
