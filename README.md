@@ -196,3 +196,30 @@ The Greeks are approximated using the following formulas:
 -   **greeks_jrrn**: Greeks calculation for JRRN model.
 -   **greeks_jreq**: Greeks calculation for JREQ model.
 -   **greeks_tian**: Greeks calculation for Tian model.
+
+# Homework 2. Trinomial Tree. Implied Volatility Surface Construction and Visualization
+
+This homework presents construction, analysis, and visualization of the implied volatility surface for options.
+
+
+### 1. **Pricing Error Analysis**
+- Calculates the pricing error for binary and European call options using a trinomial tree model.
+- Logs and plots the error as a function of steps in the pricing method, showing convergence behavior.
+
+### 2. **Strike from Delta Calculation**
+- Implements `strikeFromDelta`, which computes the strike corresponding to a given delta using forward delta conventions.
+- Utilizes numerical methods (e.g., Brent's method) for root-finding.
+
+### 3. **Volatility Smile Construction**
+- Builds a volatility smile using ATM volatilities, butterfly spreads (BF10, BF25), and risk reversals (RR10, RR25).
+- Uses cubic spline interpolation to smooth volatility across strike prices.
+
+### 4. **Implied Volatility Surface**
+- Creates a smooth implied volatility surface by interpolating variance across time and strikes.
+- Supports partial derivatives (w.r.t. time and strike) for further analysis.
+
+### 5. **Visualization**
+- Generates a 3D plot of the implied volatility surface using the `matplotlib` library.
+- Provides a clear view of how volatility changes with respect to time to maturity and strike price.
+
+---
